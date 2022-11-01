@@ -1,11 +1,11 @@
-# -*- coding: utf-8 -*-
+# -*- coding: windows-1251 -*-
 
 import requests
 from bs4 import BeautifulSoup
 import datetime
 
 
-def main(quant=1, currency='Р•РІСЂРѕ') -> list:
+def main(quant=1, currency='Евро') -> list:
     url = 'https://www.raiffeisen.ru/currency_rates/'
     r = requests.get(url)
     soup = BeautifulSoup(r.content, 'html.parser')
@@ -36,6 +36,6 @@ def data_to_csv():
 
 
 if __name__ == "__main__":
-    print("Р¦РµРЅР° РїРѕРєСѓРїРєРё РЅР°", datetime.datetime.now().strftime("%H:%M:%S %d/%m/%Y"), "=", main()[0])
+    print("Цена покупки на", datetime.datetime.now().strftime("%H:%M:%S %d/%m/%Y"), "=", main()[0])
     main()
     data_to_csv()
