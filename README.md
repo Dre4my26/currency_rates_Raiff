@@ -3,4 +3,4 @@
 
 ## TODO:
 - TeleBot file,
-- implement SQLite DB to save results properly.
+- implement csv file to save results properly.
