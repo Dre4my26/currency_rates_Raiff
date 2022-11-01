@@ -18,7 +18,6 @@ def main(quant=1, currency='Евро') -> list:
             selling_price = splitted_text[counter]
             selling_price = float(selling_price)
             selling_price = round(selling_price, 2)
-            # print("Цена покупки на", datetime.datetime.now().strftime("%H:%M:%S %d/%m/%Y"), "=", selling_price)
             break
 
     total_zp = quant * selling_price
@@ -37,5 +36,6 @@ def data_to_csv():
 
 
 if __name__ == "__main__":
+    print("Цена покупки на", datetime.datetime.now().strftime("%H:%M:%S %d/%m/%Y"), "=", main()[0])
     main()
     data_to_csv()
