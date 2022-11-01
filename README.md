@@ -3,4 +3,4 @@
 
 ## TODO:
 - TeleBot file,
-- implement csv file to save results properly.
+- implemented csv file to save results properly.
