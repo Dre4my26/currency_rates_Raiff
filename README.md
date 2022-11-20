@@ -12,8 +12,9 @@ Simply change
 - *"Евро"* => *"стерлингов"* (GBP)
 - *"Евро"* => *"иена"* (JPY)
 - *"Евро"* => *"юань"* (CNY)
-in the main() function if you want to 
-get the rate of other currency.
+ 
+    in the main() function if you want to 
+    get the rate of other currency.
 
 ### TODO:
 - TeleBot service to notify me in case Euro is higher than some value I want
