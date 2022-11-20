@@ -8,10 +8,10 @@ Simply run the script via almost any IDE to get text line with time and rate.
 
 #### In case you want to change the currency:
 Simply change
-- *"Åâðî"* => *"ÑØÀ"* (USD)
-- *"Åâðî"* => *"ñòåðëèíãîâ"* (GBP)
-- *"Åâðî"* => *"èåíà"* (JPY)
-- *"Åâðî"* => *"þàíü"* (CNY)
+- *"Ð•Ð²Ñ€Ð¾"* => *"Ð¡Ð¨Ð"* (USD)
+- *"Ð•Ð²Ñ€Ð¾"* => *"ÑÑ‚ÐµÑ€Ð»Ð¸Ð½Ð³Ð¾Ð²"* (GBP)
+- *"Ð•Ð²Ñ€Ð¾"* => *"Ð¸ÐµÐ½Ð°"* (JPY)
+- *"Ð•Ð²Ñ€Ð¾"* => *"ÑŽÐ°Ð½ÑŒ"* (CNY)
  
     in the main() function if you want to 
     get the rate of other currency.
