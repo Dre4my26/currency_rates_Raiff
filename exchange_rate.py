@@ -1,27 +1,23 @@
 # -*- coding: windows-1251 -*-
 
-import requests
-from bs4 import BeautifulSoup
 import datetime
+import requests as req
+import json
 
 
-def main(quant=1, currency='Евро') -> list:
-    url = 'https://www.raiffeisen.ru/currency_rates/'
-    r = requests.get(url)
-    soup = BeautifulSoup(r.content, 'html.parser')
-    text = soup.get_text()
-    splitted_text = text.split()
-    counter = 0
-    for key in splitted_text:
-        counter += 1
-        if key == currency:
-            selling_price = splitted_text[counter]
-            selling_price = float(selling_price)
-            selling_price = round(selling_price, 2)
-            break
-
-    total_zp = quant * selling_price
-    final_list = [round(total_zp, 3), datetime.datetime.now().strftime("%H:%M:%S %d/%m/%Y")]
+def main(quant=1, currency=['EUR']) -> list:
+    currencies = currency
+    rate_list = []
+    curr_rate = []  # list of [<currencyName>, <rateToRUB>]
+    string_curr = ','.join(map(str, currency))
+    a = req.get(f"https://www.raiffeisen.ru/oapi/currency_rate/get/?source=RCONNECT&currencies={string_curr}")
+    result = json.loads(a.text)
+    for i in range(len(currencies)):
+        price = result['data']['rates'][0]['exchange'][i]['rates']['buy']['value']
+        rate_list.append(price)
+    curr_rate.append(currencies)
+    curr_rate.append(rate_list)
+    final_list = [curr_rate[1][0], datetime.datetime.now().strftime("%H:%M:%S %d/%m/%Y")]
     return final_list
 
 
@@ -31,6 +27,7 @@ data_row = str(main()[0]) + ',' + str(main()[1])
 def data_to_csv():
     f = open('time_rate.csv', mode='a', newline='')
     f.write(data_row + '\n')
+    f.close()
 
     return 0
 
