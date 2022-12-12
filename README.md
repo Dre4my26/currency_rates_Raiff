@@ -18,3 +18,6 @@ Simply change
 
 ### TODO:
 - TeleBot service to notify me in case Euro is higher than some value I want
+- Add a function with the best rate for the day
+- Think though the graph for _dre4my.ru_ thing
+- Create a list of notifiable users or think about any other way of storing this info
